@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{bold-extra}
+\usepackage{fancyvrb}
+\usepackage{changepage}
+\usepackage{authblk}
+\usepackage{graphicx}
+
+\title{\textbf{Report on CSE 316 Project: \\Dino Run}}
+\author[]{Faiyaz Rashid Nabil (1405069) \\ Pijush Chakma (1605120) \\ Shabrina Mim (1605111)}
+\affil[]{Department of Computer Science \& Engineering, BUET}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+
+As we are living in a very testing time, in the midst of a pandemic, we have wanted to give everyone an opportunity to relieve some of their stress by playing this classic 'Dino Run' game. Majority of the INTERNET users had played or at least had seen the popular Google Chrome Dinosaur Game whenever there was no net connection available to them while browsing the INTERNET. We have created an ATmega32-based game inspired by this popular game. The protagonist "Dino" will journey through the obstacles and try to avoid as many obstacles as possible to gain higher scores.
+
+\section{Features}
+\begin{itemize}
+	
+	\item There will be a Dino and some vertical obstacles in three 8x8 LED matrices.
+	\item The goal of the Dino is to avoid these obstacles by jumping. 
+	\item There will be three lives for the Dino.
+	\item Whenever the Dino touches an obstacle, a buzzer will automatically ring to notify the decrease of life count by one.
+	\item The speed at which the obstacles come and go will be gradually increased.
+	\item The score will be incremented by one whenever the Dino passes a column of the LED Matrix.
+    \item Finally the score will be shown in a LCD display.
+	
+	\end{itemize}
+
+\section{Key Instruments}
+
+\begin{itemize}
+	\item \textbf{Proteus} is used to design the game and the circuit diagram.
+    \item \textbf{Atmel Studio} is used to implement the game and the code.
+	\item \textbf{ATMega32} is used to control the game.
+	\item \textbf{MATRIX-8x8-GREEN} Three 8x8 LED dot matrices are used to show the Dino and the obstacles. 
+	\item \textbf{LM016L} One 16x2 LCD Display is used to show the final score.
+	\item \textbf{Buzzer} One buzzer is used to notify whether the Dino has touched the obstacles or not.
+	\item \textbf{Interrupt 2} is used to control the Dino with additional help of a button.
+	\item \textbf{74HC573} Three Octal d-type transparent Latches are used to start/stop a matrix and to control the row pins of the three LED matrices.
+	\item \textbf{ULN2803} One CMOS Logic, High Voltage, High Current Darlington Transistor Array is used to control the column pins of each of the three LED Matrices.
+	\item \textbf{BC547} One NPN Low Power Bipolar Transistor is used to control the sound of the buzzer. 
+	
+\end{itemize}
+
+\section{Circuit Diagram}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{Circuit.png}
+	\label{fig:1}
+	\caption{Circuit Diagram}
+\end{figure}
+ 
+\section{Difficulties}
+
+We have faced some difficulties during the completion of this project. We wanted to use a bigger display (LM3229) to be able to show the Dino, the obstacles and the score in the same display. But we could not do it as there was not enough information available in the INTERNET. We were facing some difficulties in our 3rd LED matrix. It was blinking constantly when we first started our simulation. By adjusting delay we overcame this problem. Moreover, we wanted to show the Dino in the 1st matrix. But during simulation, the Dino sometimes vanished due to some voltage related issues. By shifting the Dino into the 2nd matrix we eradicated this problem. We encountered problems regarding the sound of the buzzer. At first there was a constant noise in the background whenever we started our simulation. By adjusting the values of the resistance and the DC voltage source, we made sure that there was no extra noise in the background.
+
+
+ \section{Conclusion}
+ In this project we have created one of the most popular and stress relieving games 'Dino Run' to give everyone an opportunity to take their mind away from all the sufferings of this COVID-19 pandemic. We hope everyone will be able to enjoy this game.
+
+
+\end{document}
